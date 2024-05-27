@@ -1,9 +1,12 @@
 // Importaciones que sirven para renderizar la app.
+// import { HelloWorldApp } from './HelloWorldApp';
+// import { FirstApp } from './FirstApp';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HelloWorldApp } from './HelloWorldApp';
-import { FirstApp } from './FirstApp';
 import './styles.css'; // Esta es la forma de agregar estilos de manera global
+import {CounterApp} from './01-CounterApp/CounterApp';
+import {CounterApp2} from './01-CounterApp/CounterApp2';
+import {CounterApp3} from './01-CounterApp/CounterApp3';
 
 // Functional components
 // Los componentes basados en funciones se escriben con PascalCase
@@ -16,7 +19,9 @@ import './styles.css'; // Esta es la forma de agregar estilos de manera global
 ReactDOM.createRoot( document.getElementById('root') )
     .render(
         <React.StrictMode>
-            <HelloWorldApp />
-            <FirstApp />
+            {/* <FirstApp/> */}
+            <CounterApp value={0}/>
+            <CounterApp2 value={3}/>
+            <CounterApp3 number={0}/>
         </React.StrictMode>
-    )
+    ) 
