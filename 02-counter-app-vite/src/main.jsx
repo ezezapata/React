@@ -21,9 +21,9 @@ ReactDOM.createRoot( document.getElementById('root') )
     .render(
         <React.StrictMode>
             {/* <FirstApp/> */}
-            {/* <CounterApp value={0}/>
-            <CounterApp2 value={3}/>
-            <CounterApp3 number={0}/> */}
-            <FirstApp />
+            {/* <CounterApp value={0}/> */}
+            {/* <CounterApp2 value={3}/> */}
+            <CounterApp3 number={0}/>
+            {/* <FirstApp title='Título' subTitle='Subtítulo' /> */}
         </React.StrictMode>
     ) 

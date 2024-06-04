@@ -26,8 +26,8 @@ export const FirstApp = ({title, subTitle}) => {
 
     return (
         <>
-            <h1>{title}</h1>
-            <h1>{subTitle}</h1>
+            <h1 data-testid='test-title' >{title}</h1>
+            <h2>{subTitle}</h2>
         </>
     )   
 }
@@ -35,11 +35,11 @@ export const FirstApp = ({title, subTitle}) => {
 // Esta es la forma de agregarle tipado a react sin TypeScript
 FirstApp.propTypes = {
     title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string.isRequired,
+    subTitle: PropTypes.string,
 }
 
 // Asignar valores por defecto a las props
-FirstApp.defaultProps = {
+/* FirstApp.defaultProps = {
     title: 'No hay título.',
     subTitle: 'No hay subtítulo.'
-}
+} */
