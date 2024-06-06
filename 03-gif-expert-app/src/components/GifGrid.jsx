@@ -1,28 +1,27 @@
-import { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
 import { GifItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {
 
-    const [ images, setImages ] = useState([]);
+    const { images, isLoading } = useFetchGifs( category );
 
-    const getImages = async() => {
-        const newImages = await getGifs( category );
-        setImages( newImages );
-    }
-
-    useEffect( () => {
-        getImages();
-    }, [] );
-    // Nunca NUNCA hay que poner la ejecución de una función en un functional component
-    // getGifs( category );
-
+    console.log( isLoading );
+    
     return (
         <>
             <h3>{ category }</h3>
+
+            {
+                // isLoading
+                // ? ( <h2>Cargando...</h2> )
+                // : null
+
+                // Esta es la forma corta del if, con un and.
+                isLoading && ( <h2>Cargando...</h2> )
+            }
+
             <div className="card-grid">
                 { images.map( img => (
-                    // <li key={ img.id }>{ img.title }</li>
                     <GifItem  
                         key={ img.id }  
                         { ...img } />
